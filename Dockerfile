@@ -9,7 +9,7 @@ RUN apt-get update && \
 
 # => Install fluentd + plugins
 RUN gem install fluentd                         -v 1.12.3 && \
-    gem install fluent-plugin-kafka             -v 0.15.1 && \
+    gem install fluent-plugin-rabbitmq          -v 0.0.9  && \
     gem install fluent-plugin-secure-forward    -v 0.4.5  && \
     gem install fluent-plugin-geoip             -v 1.3.2
 
