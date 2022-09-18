@@ -1,4 +1,4 @@
-FROM ruby:2.7-buster
+FROM ruby:3.1-bullseye
 
 # => Install GeoIP packages
 RUN apt-get update && \
@@ -8,10 +8,10 @@ RUN apt-get update && \
     geoip-bin
 
 # => Install fluentd + plugins
-RUN gem install fluentd                         -v 1.12.3 && \
-    gem install fluent-plugin-rabbitmq          -v 0.0.9  && \
+RUN gem install fluentd                         -v 1.15.1 && \
     gem install fluent-plugin-secure-forward    -v 0.4.5  && \
-    gem install fluent-plugin-geoip             -v 1.3.2
+    gem install fluent-plugin-geoip             -v 1.3.2  && \
+    gem install fluent-plugin-opensearch
 
 RUN mkdir /fluentd 
 
